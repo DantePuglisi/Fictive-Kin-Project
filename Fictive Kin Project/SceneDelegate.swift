@@ -18,10 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		if let windowScene = scene as? UIWindowScene {
 			let window = UIWindow(windowScene: windowScene)
 			
-			let storyboard = UIStoryboard(name: "Main", bundle: nil)
-			
-			let initialViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController
-			initialViewController?.webService = webService
+			let initialViewController = TitlesViewController(nibName: "TitlesViewController", bundle: nil)
+			initialViewController.webService = webService
 			window.rootViewController = initialViewController
 			
 			self.window = window
