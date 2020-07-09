@@ -19,7 +19,7 @@ class PostCell: UICollectionViewCell {
 	}
 	
 	fileprivate func configureBackground() {
-		viewBackground.backgroundColor = UIColor.CustomColor.cellBackground
+		viewBackground.backgroundColor = UIColor.BackgroundColors.cellBackground
 		viewBackground.layer.cornerRadius = 16.0
 	}
 

@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 extension UIColor {
-	struct CustomColor {
-		static let mainBackground = UIColor(red: 173/255.0, green: 173/255.0, blue: 173/255.0, alpha: 1.0)
+	struct BackgroundColors {
 		static let cellBackground = UIColor.white
+		static let secondaryBackround = UIColor(red: 236/255.0, green: 236/255.0, blue: 236/255.0, alpha: 1.0)
 	}
 	
 	struct GradientColors {

@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostViewController" customModule="Fictive_Kin_Project" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="TpQ-Tg-RX2" id="5Cl-3c-3Zd"/>
                 <outlet property="bodyLabel" destination="VHx-3O-DYj" id="Yah-PE-4jR"/>
                 <outlet property="titleLabel" destination="xIC-1e-fKf" id="pvZ-er-B4g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

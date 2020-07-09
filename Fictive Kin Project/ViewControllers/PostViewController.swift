@@ -10,6 +10,7 @@ import UIKit
 
 class PostViewController: UIViewController {
 
+	@IBOutlet weak var backgroundView: UIView!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var bodyLabel: UILabel!
 	
@@ -22,6 +23,7 @@ class PostViewController: UIViewController {
 	}
 	
 	fileprivate func setupView() {
+		backgroundView.backgroundColor = UIColor.BackgroundColors.secondaryBackround
 		titleLabel.text = post?.title ?? "Error"
 		bodyLabel.text = post?.body ?? "Error"
 	}
