@@ -123,7 +123,9 @@ class TitlesViewController: UIViewController, UICollectionViewDataSource, UIColl
 	// MARK: - Show Error Message
 	fileprivate func showErrorAlert(message: String) {
 		let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { [weak self] _ in
+			self?.fetchPosts()
+		}))
 		present(alert, animated: true, completion: nil)
 	}
 }
