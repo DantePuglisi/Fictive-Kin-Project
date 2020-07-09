@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TitlesViewController" customModule="Fictive_Kin_Project" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="I2r-Ld-OPt" id="y9g-bK-iQ2"/>
                 <outlet property="collectionView" destination="fL8-gH-bQG" id="0hD-yM-oQc"/>
                 <outlet property="view" destination="iN0-l3-epB" id="AdE-6z-7LP"/>
             </connections>
@@ -18,9 +19,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2r-Ld-OPt">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fL8-gH-bQG">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DLt-PR-pIl">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -39,6 +44,10 @@
                 <constraint firstItem="fL8-gH-bQG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ClR-es-Z8U"/>
                 <constraint firstItem="fL8-gH-bQG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="HAM-mQ-41V"/>
                 <constraint firstAttribute="bottom" secondItem="fL8-gH-bQG" secondAttribute="bottom" id="Hlr-Jr-c3a"/>
+                <constraint firstItem="I2r-Ld-OPt" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="LdY-os-aYP"/>
+                <constraint firstItem="I2r-Ld-OPt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YmH-jj-ssC"/>
+                <constraint firstItem="I2r-Ld-OPt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="f1R-1c-BC4"/>
+                <constraint firstAttribute="bottom" secondItem="I2r-Ld-OPt" secondAttribute="bottom" id="kp1-4Z-vVF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>

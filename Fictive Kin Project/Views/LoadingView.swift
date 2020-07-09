@@ -21,6 +21,7 @@ class LoadingView: UIView {
 	}
 	
 	fileprivate func createHandView() {
+		/// We add a `CAGradientLayer` to `handView` so only half of it is visible and it when rotated 360 around it's center it looks like a clock hand
 		guard handView == nil else { return }
 		handView = UIView(frame: CGRect(x: (frame.size.width / 2) - CGFloat(handViewWidth / 2), y: 8, width: CGFloat(handViewWidth), height: frame.size.height - 16))
 		configureCircles()

@@ -10,6 +10,7 @@ import UIKit
 
 class TitlesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 	
+	@IBOutlet weak var backgroundView: UIView!
 	@IBOutlet weak var collectionView: UICollectionView!
 	
 	var webService: WebService! = nil
@@ -27,7 +28,7 @@ class TitlesViewController: UIViewController, UICollectionViewDataSource, UIColl
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
-		collectionView.backgroundColor = UIColor.CustomColor.mainBackground
+		addBackgroundGradient()
 		
 		addLoadingAnimation()
 		
@@ -64,6 +65,7 @@ class TitlesViewController: UIViewController, UICollectionViewDataSource, UIColl
 		}
 	}
 	
+	// MARK: - UI
 	fileprivate func addLoadingAnimation() {
 		view.addSubview(loadingView)
 		
@@ -73,6 +75,18 @@ class TitlesViewController: UIViewController, UICollectionViewDataSource, UIColl
 		let widthConstraint = NSLayoutConstraint(item: loadingView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 120)
 		let heightConstraint = NSLayoutConstraint(item: loadingView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 120)
 		view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
+	}
+	
+	fileprivate func addBackgroundGradient() {
+		let layer = CAGradientLayer()
+		layer.frame = backgroundView.bounds
+		layer.colors = [
+			UIColor.GradientColors.topLeft.cgColor,
+			UIColor.GradientColors.bottomRight.cgColor
+		]
+		layer.startPoint = CGPoint(x: 0, y: 0)
+		layer.endPoint = CGPoint(x: 1, y: 1)
+		backgroundView.layer.addSublayer(layer)
 	}
 
 	// MARK: - CollectionView DataSource
@@ -102,6 +116,7 @@ class TitlesViewController: UIViewController, UICollectionViewDataSource, UIColl
 		super.viewWillTransition(to: size, with: coordinator)
 		coordinator.animate(alongsideTransition: { context in
 			self.collectionView.collectionViewLayout.invalidateLayout()
+			self.addBackgroundGradient()
 		}, completion: nil)
 	}
 	
