@@ -1,3 +1,6 @@
+[![xcode-version](https://img.shields.io/badge/Xcode-11.4.1-brightgreen)](https://developer.apple.com/xcode/)
+[![pods-version](https://img.shields.io/badge/CocoaPods-1.9.3-brightgreen)](https://cocoapods.org/)
+
 # Fictive Kin Project
 This is the project for the interview with Fictive Kin. It fetches `posts` from https://jsonplaceholder.typicode.com/posts and displays them in a `UICollectionView` where the cells size themselves according to their content using AutoLayout.
 
