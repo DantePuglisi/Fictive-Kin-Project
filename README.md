@@ -9,7 +9,7 @@ This is the project for the interview with Fictive Kin. It fetches `posts` from 
 - `LoadingView` as a `UIView` to display the loading state, more info below
 
 ### `TitlesViewController`:
-`TitlesViewController` handles the `UICollectionView` layout logic and it makes the call to `WebService` to fetch the posts
+`TitlesViewController` handles the `UICollectionView` layout logic and it makes the call to `WebService` to fetch the posts. `WebService` gets injected into `TitlesViewController` by `Property Injection` on `SceneDelegate.swift:22`
 ### `PostViewController`:
 `PostViewController` simply displays the `Title` and the `Body` for each `Post` when a `PostCell` is tapped on `TitlesViewController`
 ### `LoadingView`:
