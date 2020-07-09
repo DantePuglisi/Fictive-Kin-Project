@@ -4,6 +4,11 @@
 # Fictive Kin Project
 This is the project for the interview with Fictive Kin. It fetches `posts` from https://jsonplaceholder.typicode.com/posts and displays them in a `UICollectionView` where the cells size themselves according to their content using AutoLayout.
 
+# Installation
+This was compiled using `Xcode 11.4.1` and `CocoaPods 1.9.3`, if the project doesn't compile please delete the `Pods` folder and the `Podfile.lock` from the proyect and run `pod install`
+
+# Documentation
+
 ## Main Components
 - `Webservice` as a `Service` that has the logic to fetch the data from the server
 - `Post` as the `Model`, it complies to `Codable` so the JSON can be easily parsed
