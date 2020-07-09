@@ -10,8 +10,15 @@ import Foundation
 import Alamofire
 
 class WebService {
+	
+	var urlString: String
+	
+	init(urlString: String) {
+		self.urlString = urlString
+	}
+	
 	func getPosts(onSuccess: @escaping ([Post]) -> (), onError: @escaping (Error) -> ()) {
-		AF.request("https://jsonplaceholder.typicode.com/posts").responseData { response in
+		AF.request(urlString).responseData { response in
 			switch response.result {
 			case let .success(json):
 				do {
@@ -25,4 +32,8 @@ class WebService {
 			}
 		}
 	}
+}
+
+struct Constants {
+	static let baseURL = "https://jsonplaceholder.typicode.com/posts"
 }

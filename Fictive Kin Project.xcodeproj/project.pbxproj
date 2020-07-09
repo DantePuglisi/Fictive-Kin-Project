@@ -14,6 +14,9 @@
 		9304C09C24B65855005314A9 /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9304C09A24B65855005314A9 /* PostViewController.xib */; };
 		9304C09E24B6588D005314A9 /* TitlesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9304C09D24B6588D005314A9 /* TitlesViewController.xib */; };
 		9304C0A524B66070005314A9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304C0A424B66070005314A9 /* LoadingView.swift */; };
+		9304C0AD24B76092005314A9 /* WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304C0AC24B76092005314A9 /* WebServiceTests.swift */; };
+		9304C0B724B7647B005314A9 /* DataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 9304C0B624B7647B005314A9 /* DataMock.json */; };
+		9304C0B924B766E8005314A9 /* DataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 9304C0B624B7647B005314A9 /* DataMock.json */; };
 		9347C45824B63F35002871E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9347C45724B63F35002871E3 /* AppDelegate.swift */; };
 		9347C45A24B63F35002871E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9347C45924B63F35002871E3 /* SceneDelegate.swift */; };
 		9347C45C24B63F35002871E3 /* TitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9347C45B24B63F35002871E3 /* TitlesViewController.swift */; };
@@ -23,6 +26,16 @@
 		9347C47024B6431B002871E3 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9347C46F24B6431B002871E3 /* WebService.swift */; };
 		E276D71490891BA235D21946 /* Pods_Fictive_Kin_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8043874DCE3EE6BDAB30518 /* Pods_Fictive_Kin_Project.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9304C0AF24B76092005314A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9347C44C24B63F35002871E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9347C45324B63F35002871E3;
+			remoteInfo = "Fictive Kin Project";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2F60E6876D120247253E1AED /* Pods-Fictive Kin Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fictive Kin Project.release.xcconfig"; path = "Target Support Files/Pods-Fictive Kin Project/Pods-Fictive Kin Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -34,6 +47,10 @@
 		9304C09A24B65855005314A9 /* PostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
 		9304C09D24B6588D005314A9 /* TitlesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitlesViewController.xib; sourceTree = "<group>"; };
 		9304C0A424B66070005314A9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		9304C0AA24B76092005314A9 /* Fictive Kin Project Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fictive Kin Project Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9304C0AC24B76092005314A9 /* WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
+		9304C0AE24B76092005314A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9304C0B624B7647B005314A9 /* DataMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = DataMock.json; path = "Fictive Kin Project Tests/Mocks/DataMock.json"; sourceTree = SOURCE_ROOT; };
 		9347C45424B63F35002871E3 /* Fictive Kin Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fictive Kin Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9347C45724B63F35002871E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9347C45924B63F35002871E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +64,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9304C0A724B76092005314A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9347C45124B63F35002871E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,10 +128,29 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9304C0AB24B76092005314A9 /* Fictive Kin Project Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9304C0B824B76484005314A9 /* Mocks */,
+				9304C0AC24B76092005314A9 /* WebServiceTests.swift */,
+				9304C0AE24B76092005314A9 /* Info.plist */,
+			);
+			path = "Fictive Kin Project Tests";
+			sourceTree = "<group>";
+		};
+		9304C0B824B76484005314A9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9304C0B624B7647B005314A9 /* DataMock.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		9347C44B24B63F35002871E3 = {
 			isa = PBXGroup;
 			children = (
 				9347C45624B63F35002871E3 /* Fictive Kin Project */,
+				9304C0AB24B76092005314A9 /* Fictive Kin Project Tests */,
 				9347C45524B63F35002871E3 /* Products */,
 				65FF03DC980711883273CDB5 /* Pods */,
 				DD4EBFC0A275EBF20AD38B48 /* Frameworks */,
@@ -118,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				9347C45424B63F35002871E3 /* Fictive Kin Project.app */,
+				9304C0AA24B76092005314A9 /* Fictive Kin Project Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +210,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9304C0A924B76092005314A9 /* Fictive Kin Project Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9304C0B324B76092005314A9 /* Build configuration list for PBXNativeTarget "Fictive Kin Project Tests" */;
+			buildPhases = (
+				9304C0A624B76092005314A9 /* Sources */,
+				9304C0A724B76092005314A9 /* Frameworks */,
+				9304C0A824B76092005314A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9304C0B024B76092005314A9 /* PBXTargetDependency */,
+			);
+			name = "Fictive Kin Project Tests";
+			productName = "Fictive Kin Project Tests";
+			productReference = 9304C0AA24B76092005314A9 /* Fictive Kin Project Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9347C45324B63F35002871E3 /* Fictive Kin Project */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9347C46824B63F35002871E3 /* Build configuration list for PBXNativeTarget "Fictive Kin Project" */;
@@ -195,6 +257,10 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Dante Puglisi";
 				TargetAttributes = {
+					9304C0A924B76092005314A9 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 9347C45324B63F35002871E3;
+					};
 					9347C45324B63F35002871E3 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -214,15 +280,25 @@
 			projectRoot = "";
 			targets = (
 				9347C45324B63F35002871E3 /* Fictive Kin Project */,
+				9304C0A924B76092005314A9 /* Fictive Kin Project Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9304C0A824B76092005314A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9304C0B724B7647B005314A9 /* DataMock.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9347C45224B63F35002871E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9304C0B924B766E8005314A9 /* DataMock.json in Resources */,
 				9347C46424B63F35002871E3 /* LaunchScreen.storyboard in Resources */,
 				9347C46124B63F35002871E3 /* Assets.xcassets in Resources */,
 				9304C09524B64EA0005314A9 /* PostCell.xib in Resources */,
@@ -276,6 +352,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9304C0A624B76092005314A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9304C0AD24B76092005314A9 /* WebServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9347C45024B63F35002871E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +378,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9304C0B024B76092005314A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9347C45324B63F35002871E3 /* Fictive Kin Project */;
+			targetProxy = 9304C0AF24B76092005314A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		9347C46224B63F35002871E3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -306,6 +398,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9304C0B124B76092005314A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X44GY3897H;
+				INFOPLIST_FILE = "Fictive Kin Project Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DantePuglisi.Fictive-Kin-Project-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fictive Kin Project.app/Fictive Kin Project";
+			};
+			name = Debug;
+		};
+		9304C0B224B76092005314A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X44GY3897H;
+				INFOPLIST_FILE = "Fictive Kin Project Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DantePuglisi.Fictive-Kin-Project-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fictive Kin Project.app/Fictive Kin Project";
+			};
+			name = Release;
+		};
 		9347C46624B63F35002871E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -461,6 +593,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9304C0B324B76092005314A9 /* Build configuration list for PBXNativeTarget "Fictive Kin Project Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9304C0B124B76092005314A9 /* Debug */,
+				9304C0B224B76092005314A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9347C44F24B63F35002871E3 /* Build configuration list for PBXProject "Fictive Kin Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

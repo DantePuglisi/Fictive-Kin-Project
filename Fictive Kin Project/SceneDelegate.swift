@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
 
-	let webService = WebService()
+	let webService = WebService(urlString: Constants.baseURL)
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		if let windowScene = scene as? UIWindowScene {

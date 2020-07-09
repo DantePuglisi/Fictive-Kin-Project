@@ -38,11 +38,18 @@ class LoadingView: UIView {
 			let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
 			
 			rotationAnimation.fromValue = 0.0
-			rotationAnimation.toValue = Float.pi * 2.0
-			rotationAnimation.duration = 4
-			rotationAnimation.repeatCount = Float.infinity
+			rotationAnimation.toValue = .pi * 2.0
+			rotationAnimation.duration = 1
+			rotationAnimation.isRemovedOnCompletion = false
+			rotationAnimation.fillMode = .forwards
+			rotationAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 			
-			handView?.layer.add(rotationAnimation, forKey: "rotationKey")
+			let animationGroup = CAAnimationGroup()
+			animationGroup.animations = [rotationAnimation]
+			animationGroup.duration = 1
+			animationGroup.repeatCount = .infinity
+			
+			handView?.layer.add(animationGroup, forKey: "rotationKey")
 		}
 	}
 	
