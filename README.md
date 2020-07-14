@@ -1,5 +1,13 @@
+[![xcode-version](https://img.shields.io/badge/Xcode-11.4.1-brightgreen)](https://developer.apple.com/xcode/)
+[![pods-version](https://img.shields.io/badge/CocoaPods-1.9.3-brightgreen)](https://cocoapods.org/)
+
 # Fictive Kin Project
 This is the project for the interview with Fictive Kin. It fetches `posts` from https://jsonplaceholder.typicode.com/posts and displays them in a `UICollectionView` where the cells size themselves according to their content using AutoLayout.
+
+# Installation
+This was compiled using `Xcode 11.4.1` and `CocoaPods 1.9.3`, if the project doesn't compile please delete the `Pods` folder and the `Podfile.lock` from the proyect and run `pod install`
+
+# Documentation
 
 ## Main Components
 - `Webservice` as a `Service` that has the logic to fetch the data from the server
@@ -9,7 +17,7 @@ This is the project for the interview with Fictive Kin. It fetches `posts` from 
 - `LoadingView` as a `UIView` to display the loading state, more info below
 
 ### `TitlesViewController`:
-`TitlesViewController` handles the `UICollectionView` layout logic and it makes the call to `WebService` to fetch the posts
+`TitlesViewController` handles the `UICollectionView` layout logic and it makes the call to `WebService` to fetch the posts. `WebService` gets injected into `TitlesViewController` by `Property Injection` on `SceneDelegate.swift:22`
 ### `PostViewController`:
 `PostViewController` simply displays the `Title` and the `Body` for each `Post` when a `PostCell` is tapped on `TitlesViewController`
 ### `LoadingView`:
