@@ -17,14 +17,12 @@ class WebServiceTests: XCTestCase {
 	override func setUp() {
 		super.setUp()
 		
-		guard let path = Bundle.main.url(forResource: "DataMock", withExtension: "json") else { return }
-		
-		webService = WebService(urlString: path.relativeString)
+		webService = WebService()
 	}
 	
 	func testRequest() {
 		let reqExpectation = expectation(description: "PostsRequest")
-		webService.getPosts(onSuccess: { posts in
+		webService.get(endpoint: .posts, onSuccess: { (posts: [Post]) in
 			reqExpectation.fulfill()
 			XCTAssert(posts.count > 0, "We received 0 posts")
 			XCTAssert(posts.count == 100, "We didn't receive 100 posts, we received \(posts.count)")

@@ -15,8 +15,6 @@
 		9304C09E24B6588D005314A9 /* TitlesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9304C09D24B6588D005314A9 /* TitlesViewController.xib */; };
 		9304C0A524B66070005314A9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304C0A424B66070005314A9 /* LoadingView.swift */; };
 		9304C0AD24B76092005314A9 /* WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304C0AC24B76092005314A9 /* WebServiceTests.swift */; };
-		9304C0B724B7647B005314A9 /* DataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 9304C0B624B7647B005314A9 /* DataMock.json */; };
-		9304C0B924B766E8005314A9 /* DataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 9304C0B624B7647B005314A9 /* DataMock.json */; };
 		9347C45824B63F35002871E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9347C45724B63F35002871E3 /* AppDelegate.swift */; };
 		9347C45A24B63F35002871E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9347C45924B63F35002871E3 /* SceneDelegate.swift */; };
 		9347C45C24B63F35002871E3 /* TitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9347C45B24B63F35002871E3 /* TitlesViewController.swift */; };
@@ -50,7 +48,6 @@
 		9304C0AA24B76092005314A9 /* Fictive Kin Project Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fictive Kin Project Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9304C0AC24B76092005314A9 /* WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
 		9304C0AE24B76092005314A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9304C0B624B7647B005314A9 /* DataMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = DataMock.json; path = "Fictive Kin Project Tests/Mocks/DataMock.json"; sourceTree = SOURCE_ROOT; };
 		9347C45424B63F35002871E3 /* Fictive Kin Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fictive Kin Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9347C45724B63F35002871E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9347C45924B63F35002871E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +138,6 @@
 		9304C0B824B76484005314A9 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				9304C0B624B7647B005314A9 /* DataMock.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -290,7 +286,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9304C0B724B7647B005314A9 /* DataMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +293,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9304C0B924B766E8005314A9 /* DataMock.json in Resources */,
 				9347C46424B63F35002871E3 /* LaunchScreen.storyboard in Resources */,
 				9347C46124B63F35002871E3 /* Assets.xcassets in Resources */,
 				9304C09524B64EA0005314A9 /* PostCell.xib in Resources */,
@@ -560,6 +554,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X44GY3897H;
 				INFOPLIST_FILE = "Fictive Kin Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,7 +562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DantePuglisi.Fictive-Kin-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -579,6 +574,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X44GY3897H;
 				INFOPLIST_FILE = "Fictive Kin Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -586,7 +582,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DantePuglisi.Fictive-Kin-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -8,17 +8,22 @@
 
 import UIKit
 
-class TitlesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class TitlesViewController: UIViewController {
 	
 	@IBOutlet weak var backgroundView: UIView!
 	@IBOutlet weak var collectionView: UICollectionView!
 	
 	var webService: WebService! = nil
 	
-	var posts = [Post]()
+	var posts = [Post]() {
+		didSet {
+			collectionView.reloadData()
+		}
+	}
 	
 	var loadingView = LoadingView()
 	
+	// MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -37,6 +42,7 @@ class TitlesViewController: UIViewController, UICollectionViewDataSource, UIColl
 		}
 	}
 	
+	// MARK: - UI
 	fileprivate func setupCollectionView() {
 		let size = NSCollectionLayoutSize(
 			widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),
@@ -54,18 +60,6 @@ class TitlesViewController: UIViewController, UICollectionViewDataSource, UIColl
 		collectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: "PostCell")
 	}
 	
-	fileprivate func fetchPosts() {
-		webService.getPosts(onSuccess: { [weak self] posts in
-			self?.posts = posts
-			self?.collectionView.reloadData()
-			self?.loadingView.stopAnimating()
-			self?.loadingView.removeFromSuperview()
-		}) { [weak self] error in
-			self?.showErrorAlert(message: "An error happened: \(error.localizedDescription)")
-		}
-	}
-	
-	// MARK: - UI
 	fileprivate func addLoadingAnimation() {
 		view.addSubview(loadingView)
 		
@@ -88,27 +82,22 @@ class TitlesViewController: UIViewController, UICollectionViewDataSource, UIColl
 		layer.endPoint = CGPoint(x: 1, y: 1)
 		backgroundView.layer.addSublayer(layer)
 	}
-
-	// MARK: - CollectionView DataSource
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return posts.count
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostCell
-		cell.setupCell(withPost: posts[indexPath.item])
-		return cell
-	}
-	
-	// MARK: - CollectionView Delegate
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		pushPostViewController(withPost: posts[indexPath.item])
-	}
 	
 	fileprivate func pushPostViewController(withPost post: Post) {
 		let newVC = PostViewController(nibName: "PostViewController", bundle: nil)
 		newVC.post = post
 		present(newVC, animated: true, completion: nil)
+	}
+	
+	// MARK: - Fetch
+	fileprivate func fetchPosts() {
+		webService.get(endpoint: .posts, onSuccess: { [weak self] (posts: [Post]) in
+			self?.posts = posts
+			self?.loadingView.stopAnimating()
+			self?.loadingView.removeFromSuperview()
+		}) { [weak self] error in
+			self?.showErrorAlert(message: "An error happened: \(error.localizedDescription)")
+		}
 	}
 	
 	// MARK: - View Transition Handling
@@ -130,3 +119,22 @@ class TitlesViewController: UIViewController, UICollectionViewDataSource, UIColl
 	}
 }
 
+// MARK: - CollectionView DataSource
+extension TitlesViewController: UICollectionViewDataSource {
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return posts.count
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostCell
+		cell.setupCell(withPost: posts[indexPath.item])
+		return cell
+	}
+}
+
+// MARK: - CollectionView Delegate
+extension TitlesViewController: UICollectionViewDelegate {
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		pushPostViewController(withPost: posts[indexPath.item])
+	}
+}

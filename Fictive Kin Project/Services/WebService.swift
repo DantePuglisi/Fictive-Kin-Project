@@ -11,19 +11,17 @@ import Alamofire
 
 class WebService {
 	
-	var urlString: String
-	
-	init(urlString: String) {
-		self.urlString = urlString
+	enum Endpoint: String {
+		case posts = "https://jsonplaceholder.typicode.com/posts"
 	}
 	
-	func getPosts(onSuccess: @escaping ([Post]) -> (), onError: @escaping (Error) -> ()) {
-		AF.request(urlString).responseData { response in
+	func get<T>(endpoint: Endpoint, onSuccess: @escaping (T) -> (), onError: @escaping (Error) -> ()) where T: Decodable {
+		AF.request(endpoint.rawValue).responseData { response in
 			switch response.result {
 			case let .success(json):
 				do {
-					let posts = try JSONDecoder().decode([Post].self, from: json)
-					onSuccess(posts)
+					let array = try JSONDecoder().decode(T.self, from: json)
+					onSuccess(array)
 				} catch let error {
 					onError(error)
 				}
@@ -32,8 +30,4 @@ class WebService {
 			}
 		}
 	}
-}
-
-struct Constants {
-	static let baseURL = "https://jsonplaceholder.typicode.com/posts"
 }
